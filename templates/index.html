@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات المواقع الطبيعية</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>مرحبًا بك في مساعد المواقع الطبيعية</h1>
+        <form id="queryForm">
+            <label for="siteName">أدخل اسم الموقع:</label>
+            <input type="text" id="siteName" name="siteName" placeholder="مثال: غابات الأمازون" required>
+            <button type="submit">إرسال</button>
+        </form>
+        <div id="response">
+            <h2>النتيجة:</h2>
+            <p id="responseText">لم يتم استلام أي استجابة بعد.</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("queryForm");
+        const responseText = document.getElementById("responseText");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const siteName = document.getElementById("siteName").value;
+
+            const response = await fetch("/ask", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ message: siteName }),
+            });
+
+            const data = await response.json();
+            responseText.textContent = data.response;
+        });
+    </script>
+</body>
+</html>
