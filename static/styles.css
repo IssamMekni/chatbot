@@ -7,69 +7,59 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .container {
     max-width: 600px;
     margin: 50px auto;
     background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
-
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 24px;
     color: #4CAF50;
 }
-
 form {
     display: flex;
     flex-direction: column;
     align-items: stretch;
 }
-
 label {
     font-size: 16px;
     margin-bottom: 10px;
     text-align: right;
 }
-
 input[type="text"] {
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 6px;
     margin-bottom: 20px;
     box-sizing: border-box;
 }
-
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 0;
+    font-size: 17px;
     color: #fff;
     background-color: #4CAF50;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 button:hover {
-    background-color: #45a049;
+    background-color: #388e3c;
 }
-
-#response {
+#loading {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #4CAF50;
+}
+#responseText {
     margin-top: 30px;
     text-align: right;
-}
-
-#response h2 {
-    font-size: 18px;
-    color: #555;
-}
-
-#response p {
-    font-size: 16px;
-    color: #666;
+    font-size: 17px;
+    color: #444;
+    min-height: 40px;
 }

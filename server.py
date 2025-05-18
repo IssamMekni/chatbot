@@ -12,7 +12,7 @@ API_KEY = os.getenv("API_KEY")  # تأكد أن ملف .env يحتوي على ا
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={API_KEY}"
 
 def load_site_info(site_name):
-    with open("data.csv", newline='', encoding="utf-8") as f:
+    with open("algeria_tourist_places_all_cities.csv", newline='', encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             if site_name.lower() in row["Name"].lower():
